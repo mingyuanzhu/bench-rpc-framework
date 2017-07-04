@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+message GrpcMsg {
+    string field1 = 1;
+    string field2 = 2;
+    string field3 = 3;
+    string field4 = 4;
+    string field5 = 5;
+}
+
+message Empty {
+}
+
+service GrpcServer {
+    rpc Ping(Empty) returns(GrpcMsg) {}
+}

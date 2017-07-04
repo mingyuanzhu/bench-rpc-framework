@@ -1,0 +1,9 @@
+FROM golang
+
+ADD . /go/src/github.com/pdu/bench-rpc-framework
+
+RUN go install github.com/pdu/bench-rpc-framework/grpc-gogo/server
+
+ENTRYPOINT ["/go/bin/server"]
+CMD ["-protoPort=:10001"]
+EXPOSE 10001

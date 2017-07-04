@@ -1,0 +1,8 @@
+FROM golang
+
+ADD . /go/src/github.com/pdu/bench-rpc-framework
+
+RUN go install github.com/pdu/bench-rpc-framework/thrift/client
+
+ENTRYPOINT ["/go/bin/client"]
+CMD ["-server=:10002"]
